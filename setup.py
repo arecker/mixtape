@@ -1,20 +1,25 @@
-from setuptools import setup
-setup(
+import setuptools
+
+
+setuptools.setup(
+    name='mixtape',
+    version='0.0.0',
+    url='https://github.com/arecker/mixtape.git',
+    author='Alex Recker',
+    author_email='alex@reckerfamily.com',
+    description='the commandline mixtape manager',
+    packages=['mixtape'],
     entry_points = {
         'console_scripts': ['mixtape=mixtape.__main__:main'],
     },
-    name='mixtape',
     install_requires=[
-        'python-slugify==8.0.4',
-        'yt-dlp==2024.12.23',
+        'yt-dlp', # always latest
+        'PyYAML==6.0.2',
+        'mutagen==1.47.0',
     ],
     extras_require={
         'dev': [
-            'ipdb',
-            'ipython',
-            'isort',
             'jedi-language-server',
-            'pyflakes',
-        ]
-    }
+        ],
+    },
 )

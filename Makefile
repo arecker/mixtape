@@ -1,19 +1,11 @@
 .PHONY: all
-all: venv/bin/python
+all: venv/bin/mixtape
 
-venv/bin/python: setup.py
-	rm -rf ./venv
-	python -m venv --copies ./venv
-	./venv/bin/pip install --upgrade --quiet pip
-	./venv/bin/pip install -e .
+venv/bin/python:
+	python -m venv ./venv --copies
 
-.PHONY: dev
-dev: venv/bin/python
+venv/bin/mixtape: venv/bin/python
 	./venv/bin/pip install -e .[dev]
-
-.PHONY: test
-test: venv/bin/python
-	./venv/bin/python -m unittest
 
 .PHONY: clean
 clean:
