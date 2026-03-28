@@ -9,7 +9,7 @@ from .config import Track
 
 def convert_track(source: str | pathlib.Path, destination: str | pathlib.Path):
     subprocess.run(
-        ['ffmpeg', '-i', source, '-acodec', 'libvorbis', destination],
+        ['ffmpeg', '-i', source, '-c:a', 'libopus', destination],
         check=True,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
