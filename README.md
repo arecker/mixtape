@@ -11,7 +11,7 @@ Some features:
 
 ## Requirements
 
-- `python` (see [.tool-versions](./tool-versions))
+- `python` (see [.tool-versions](./.tool-versions))
 - `ffmpeg`
 - `make`
 
