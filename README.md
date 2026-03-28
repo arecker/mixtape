@@ -2,6 +2,19 @@
 
 Use `mixtape` to build your own mixtapes.
 
+```
+$ mixtape -h
+usage: mixtape [-h] config
+
+The scrappy cli mixtape builder.
+
+positional arguments:
+  config      path/to/config.yml
+
+options:
+  -h, --help  show this help message and exit
+```
+
 Some features:
 
 - Downloads audio tracks from YouTube or just round them up from local paths
