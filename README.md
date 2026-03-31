@@ -18,7 +18,7 @@ options:
 Some features:
 
 - Downloads audio tracks from YouTube or just round them up from local paths
-- Automatically converts tracks to OGG format
+- Automatically converts tracks to MP3 format
 - Tags final tracks with metadata
 - Custom cover art supported!
 
@@ -62,4 +62,8 @@ Run the command.
 $ mixtape config.yml
 ```
 
-Your shiny new mixtape will spit out into `./masters/`, metadata included!
+Then check for your new mixtape.
+
+### Can I run it again?
+
+Yes.  In fact, if you run it in the same directory, the `./downloads` folder should be reused, just the masters will be rebuilt.

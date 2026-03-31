@@ -31,7 +31,7 @@ def main():
             download_track(track, download_dir)
 
     # pave and recreate masters folder
-    exports_dir = config.workspace / 'masters'
+    exports_dir = config.workspace / config.name
     if exports_dir.is_dir():
         shutil.rmtree(exports_dir, )
     exports_dir.mkdir()
@@ -42,13 +42,13 @@ def main():
             source = config.workspace / track.local
         else:
             source = download_dir / f'{slugify_track(track)}.m4a'
-        destination = exports_dir / f'{i + 1:02} - {track.title.upper()}.ogg'
+        destination = exports_dir / f'{i + 1:02} - {track.title.upper()}.mp3'
         convert_track(source, destination)
         logger.info('converting "%s" [%d/%d]', track.title, i + 1, len(config.tracks))
 
     # tag tracks
     for i, track in enumerate(config.tracks):
-        target = exports_dir / f'{i + 1:02} - {track.title.upper()}.ogg'
+        target = exports_dir / f'{i + 1:02} - {track.title.upper()}.mp3'
         logger.info('tagging "%s" [%d/%d]', track.title, i + 1, len(config.tracks))
         tag_track(target, track, i + 1, config.name, config.year, cover=config.cover)
 
